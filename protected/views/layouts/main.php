@@ -6,13 +6,12 @@
 	<meta name="language" content="en" />
 
 	
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
         
-       	<?php Yii::app()->getClientScript()->registerCoreScript('jquery'); ?>
 
         <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
         <?php Yii::app()->bootstrap->register(); ?>
-        
+        	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
          <div class="banner">
 

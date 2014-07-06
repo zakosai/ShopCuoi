@@ -5,6 +5,7 @@
     <input type="hidden" name="number" id="number" value="1">
 
 
+       	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script>
     var i = 1;

@@ -8,7 +8,7 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
 <tr class="<?php p($i++) ?>" id="<?php echo $m->id?>">
     <td style="width: 300px"><?php echo $m->productCode ?></td>
     <td style="width: 300px"><?php echo CHtml::image($baseLink . "/" . $img[0]->link, 'Ảnh sản phẩn', array('width' => 100, 'height' => 40, 'border' => '1px solid gray')) ?></td>
-    <td><div class="filter-container"><input name="<?php echo $m->id ?>" type="text"></div></td>
+<!--    <td><div class="filter-container"><input name="<?php //echo $m->id ?>" type="text"></div></td>-->
     <td class="button-column"><a class="delete<?php echo $m->id ?>" title="Xóa" rel="tooltip"><i class="icon-trash"></i></a></td>
 </tr>
 <script>

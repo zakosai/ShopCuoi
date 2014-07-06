@@ -18,7 +18,7 @@ else {
             <tr>
                 <th id="yw29_c0">#Mã sản phẩm</th>
                 <th id="yw29_c1">Ảnh</th>
-                <th id="yw29_c2">Số lượng</th>
+<!--                <th id="yw29_c2">Số lượng</th>-->
                 <th class="button-column" id="yw29_c4">&nbsp;</th>
             </tr>
         </thead>

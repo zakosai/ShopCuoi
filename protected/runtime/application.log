@@ -5224,3 +5224,43 @@ Stack trace:
 #27 {main}
 REQUEST_URI=/ShopCuoi/
 ---
+2014/07/07 00:03:35 [error] [php] symlink() [<a href='function.symlink'>function.symlink</a>]: Cannot create symlink, error code(183) (C:\xampp\htdocs\yii\framework\web\CAssetManager.php:242)
+Stack trace:
+#0 C:\xampp\htdocs\ShopCuoi\protected\extensions\bootstrap\components\Bootstrap.php(50): Bootstrap->getAssetsUrl()
+#1 C:\xampp\htdocs\ShopCuoi\protected\extensions\bootstrap\components\Bootstrap.php(81): Bootstrap->registerCoreCss()
+#2 C:\xampp\htdocs\ShopCuoi\protected\extensions\bootstrap\components\Bootstrap.php(115): Bootstrap->registerAllCss()
+#3 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\main.php(13): Bootstrap->register()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#6 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#7 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#8 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#11 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\column2.php(10): SiteController->endContent()
+#12 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(784): SiteController->renderFile()
+#15 C:\xampp\htdocs\ShopCuoi\protected\controllers\SiteController.php(36): SiteController->render()
+#16 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#21 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#22 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\ShopCuoi\index.php(13): CWebApplication->run()
+REQUEST_URI=/ShopCuoi/
+in C:\xampp\htdocs\ShopCuoi\protected\extensions\bootstrap\components\Bootstrap.php (306)
+in C:\xampp\htdocs\ShopCuoi\protected\extensions\bootstrap\components\Bootstrap.php (50)
+in C:\xampp\htdocs\ShopCuoi\protected\extensions\bootstrap\components\Bootstrap.php (81)
+2014/07/07 01:40:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "login".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('login')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('login')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/login')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=admin/login
+---

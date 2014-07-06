@@ -44,6 +44,7 @@ return array(
                 'assetManager' => array(
                     'linkAssets' => true,
                  ),
+
                 'Cookies' => array('class' => 'application.components.CookiesHelper'),
 
                 'bootstrap'=>array(

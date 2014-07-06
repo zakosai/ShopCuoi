@@ -1,7 +1,7 @@
 <?php
 /* @var $this ProductController */
 /* @var $model Product */
-?><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+?>
 <?php
 $this->breadcrumbs=array(
 	'Products'=>array('index'),
