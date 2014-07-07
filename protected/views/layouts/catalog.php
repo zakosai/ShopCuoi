@@ -72,6 +72,17 @@ $typeGet = $_GET['type'];
 <ul id="yw0" class="nav nav-list">
     <div class="title"> HỖ TRỢ ONLINE</div>
     <hr>
+   <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
+<div id="SkypeButton_Call_zakosai_1">
+  <script type="text/javascript">
+    Skype.ui({
+      "name": "dropdown",
+      "element": "SkypeButton_Call_zakosai_1",
+      "participants": ["zakosai"],
+      "imageSize": 32
+    });
+  </script>
+</div>              
     <br/>
 </ul>
 </div>
@@ -79,7 +90,25 @@ $typeGet = $_GET['type'];
 <div class="Visited">
 <ul id="yw0" class="nav nav-list">
     <div class="title"> LƯỢT KHÁCH GHÉ THĂM</div>
+    
     <hr>
+    
     <br/>
 </ul>
 </div>
+<div class="fb-like-box" data-href="https://www.facebook.com/banquanaotreemgiare" data-width="185" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
+
+<?php
+    $files = scandir("../ShopCuoi/images/");
+    $extension = array("gif", "jpeg", "jpg", "png");
+    $i = 0;
+    foreach ($files as $f){
+        $type = explode(".", $f);
+        $type = end($type);
+        if (in_array($type, $extension)){
+            echo CHtml::image(Yii::app()->baseUrl."/images/".$f,'Ảnh Trang Trí', array('width' => 185));
+            if ($i++ >= 7) break;
+        }
+
+    }
+?>

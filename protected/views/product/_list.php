@@ -14,13 +14,14 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
     
     <?php
        if ($image[0]->link == "") $image[0]->link = "defaults.jpg";
-       echo CHtml::image($baseLink."/".$image[0]->link, 'Ảnh Sản Phẩm');      
+       $imghtml = CHtml::image($baseLink."/".$image[0]->link, 'Ảnh Sản Phẩm'); 
+       echo CHtml::link($imghtml, array('/product/productDetails', 'id'=>$data->id));
     ?>
     <div class="line1">
         <div class="code">Mã số: <?php echo $data->productCode ?></div>
         
         <div class="giohang<?php echo $data->id?>"> 
-            <?php echo CHtml::image($baseLink."/icon_giohang.png",'Giỏ Hàng', array('width' => 20, 'height' => 30));?>
+           <?php echo CHtml::image($baseLink."/icon_giohang.png",'Giỏ Hàng', array('width' => 20, 'height' => 30));?>
         </div>
         <div class="code">Size: <?php echo $data->size ?></div>
         <div class="code">Giá: <?php echo $data->price ?> VND</div>

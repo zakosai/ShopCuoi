@@ -28,7 +28,7 @@ class ProductController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('list', 'upload', 'up'),
+				'actions'=>array('list', 'productDetails'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -87,6 +87,15 @@ class ProductController extends Controller
             
             
         }
+        
+        public function actionProductDetails($id){
+                        $this->layout = '//layouts/column2';
+
+            $model = $this->loadModel($id);
+                $str = "productID = ".$model->id;
+                $img = Image::model()->findAll(array('condition'=>$str));
+                $this->render('productDetail', array('model'=>$model, 'img'=>$img));
+        }
 
         public function actionCatalog()
         {
@@ -104,7 +113,6 @@ class ProductController extends Controller
 	public function actionCreate()
 	{
 		$model=new Product;
-                $img = new Image;
                 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -134,7 +142,6 @@ class ProductController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-                        'img' =>$img,
 		));
 	}
 
@@ -146,6 +153,8 @@ class ProductController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+                 $str = "productID = ".$model->id;
+                $img = Image::model()->findAll(array('condition'=>$str));
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -178,6 +187,7 @@ class ProductController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+                        'img' => $img,
 		));
 	}
 

@@ -9,11 +9,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Product', 'url'=>array('index')),
-	array('label'=>'Create Product', 'url'=>array('create')),
-	array('label'=>'Update Product', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Delete Product', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Product', 'url'=>array('admin')),
+	array('label'=>'Danh sách sản phẩm', 'url'=>array('index')),
+	array('label'=>'Tạo Sản Phẩm Mới', 'url'=>array('create')),
+	array('label'=>'Sửa thông tin sản phẩm', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Xóa sản phẩm', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Quản lý sản phẩm', 'url'=>array('admin')),
 );
 ?>
 <h1>View Product #<?php echo $model->id; ?></h1>

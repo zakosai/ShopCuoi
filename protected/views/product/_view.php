@@ -7,7 +7,7 @@
 <div class="view">
     <div class ="info">
 	<b>Mã Sản Phẩm:</b>
-	<?php echo CHtml::link(CHtml::encode($data->productCode), array('product/update','id'=>$data->id)); ?>
+	<?php echo CHtml::link(CHtml::encode($data->productCode), array('product/view','id'=>$data->id)); ?>
 	<br />
 
 	<b>Chất:</b>

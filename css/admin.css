@@ -18,3 +18,13 @@ root {
     padding: 5px;
     border: 1px solid gray;
 }
+
+.form .product .row{
+    width: 50%;
+    float: left;
+}
+
+.form .product .uploadImage{
+    width: 49%;
+    float: right;
+}

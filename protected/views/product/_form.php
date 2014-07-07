@@ -60,7 +60,8 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
 	</div>
         <div class="uploadImage">
             <h2>Chọn Ảnh Sản Phẩm</h2>
-            <?php $this->renderPartial('/product/upload')?>
+           
+            <?php $this->renderPartial('/product/upload', array('img'=>$img))?>
         </div>
         
 	<div class="row buttons">

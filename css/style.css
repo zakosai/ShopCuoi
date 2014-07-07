@@ -173,3 +173,33 @@ div.span-19{
     width: 49%!important;
     float: left;
 }
+
+.allImages{
+    width: 30%;
+    float: left;
+}
+
+.carousel{
+    width: 70%;
+    float: right;
+}
+.info{
+    text-align: center;
+}
+.info hr{
+    margin: auto;
+    width: 90%;
+    background-color: gray;
+}
+
+.info .code{
+    width: 50%;
+text-align: left;
+margin: auto;
+font-size: 18px;
+}
+
+.info #giohang{
+    width: 50%;
+    float: right;
+}

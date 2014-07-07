@@ -50,6 +50,9 @@ return array(
                 'bootstrap'=>array(
                     'class'=>'bootstrap.components.Bootstrap',
                 ),
+            'counter' => array(
+            'class' => 'UserCounter',
+        ),
 		// uncomment the following to enable URLs in path-format
 		
 //		'urlManager'=>array(
