@@ -5511,3 +5511,464 @@ Stack trace:
 REQUEST_URI=/ShopCuoi/index.php?r=site/productDetails&id=82
 HTTP_REFERER=http://localhost/ShopCuoi/
 ---
+2014/07/08 01:57:30 [error] [exception.CException] exception 'CException' with message 'Alias "ext.kindeditor.KindEditor" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\yii\framework\YiiBase.php:316
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.kindeditor....', true)
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(InfopageController), 'ext.kindeditor....', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.kindeditor....', Array)
+#3 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\_form.php(26): CBaseController->widget('ext.kindeditor....', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\update.php(9): CController->renderPartial('_form', Array)
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#12 C:\xampp\htdocs\ShopCuoi\protected\controllers\InfopageController.php(87): CController->render('update', Array)
+#13 [internal function]: InfopageController->actionUpdate('home')
+#14 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(InfopageController), Array)
+#15 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(InfopageController), Object(ReflectionMethod), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#17 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('infopage/update')
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#28 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=infopage/update&col=home
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=transaction/index
+---
+2014/07/08 02:04:13 [error] [exception.CException] exception 'CException' with message 'The "forceCopy" and "linkAssets" cannot be both true.' in C:\xampp\htdocs\yii\framework\web\CAssetManager.php:211
+Stack trace:
+#0 C:\xampp\htdocs\ShopCuoi\protected\extensions\kindeditor\KindEditorWidget.php(115): CAssetManager->publish('C:\xampp\htdocs...', false, -1, true)
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(111): KindEditorWidget->getAssetsUrl()
+#2 C:\xampp\htdocs\ShopCuoi\protected\extensions\kindeditor\KindEditorWidget.php(74): CComponent->__get('assetsUrl')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): KindEditorWidget->init()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.kindeditor....', Array)
+#5 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\_form.php(22): CBaseController->widget('ext.kindeditor....', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\update.php(9): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#14 C:\xampp\htdocs\ShopCuoi\protected\controllers\InfopageController.php(87): CController->render('update', Array)
+#15 [internal function]: InfopageController->actionUpdate('home')
+#16 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(InfopageController), Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(InfopageController), Object(ReflectionMethod), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('infopage/update')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=infopage/update&col=home
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=transaction/index
+---
+2014/07/08 02:07:29 [error] [exception.CException] exception 'CException' with message 'The "forceCopy" and "linkAssets" cannot be both true.' in C:\xampp\htdocs\yii\framework\web\CAssetManager.php:211
+Stack trace:
+#0 C:\xampp\htdocs\ShopCuoi\protected\extensions\kindeditor\KindEditorWidget.php(115): CAssetManager->publish('C:\xampp\htdocs...', false, -1, true)
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(111): KindEditorWidget->getAssetsUrl()
+#2 C:\xampp\htdocs\ShopCuoi\protected\extensions\kindeditor\KindEditorWidget.php(74): CComponent->__get('assetsUrl')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): KindEditorWidget->init()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.kindeditor....', Array)
+#5 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\_form.php(22): CBaseController->widget('ext.kindeditor....', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\update.php(9): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#14 C:\xampp\htdocs\ShopCuoi\protected\controllers\InfopageController.php(87): CController->render('update', Array)
+#15 [internal function]: InfopageController->actionUpdate('home')
+#16 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(InfopageController), Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(InfopageController), Object(ReflectionMethod), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('infopage/update')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=infopage/update&col=home
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=transaction/index
+---
+2014/07/08 23:10:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('logout')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('logout')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/logout')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=admin/logout
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=product/index
+---
+2014/07/08 23:11:01 [error] [exception.CException] exception 'CException' with message 'The "forceCopy" and "linkAssets" cannot be both true.' in C:\xampp\htdocs\yii\framework\web\CAssetManager.php:211
+Stack trace:
+#0 C:\xampp\htdocs\ShopCuoi\protected\extensions\kindeditor\KindEditorWidget.php(115): CAssetManager->publish('C:\xampp\htdocs...', false, -1, true)
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(111): KindEditorWidget->getAssetsUrl()
+#2 C:\xampp\htdocs\ShopCuoi\protected\extensions\kindeditor\KindEditorWidget.php(74): CComponent->__get('assetsUrl')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): KindEditorWidget->init()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.kindeditor....', Array)
+#5 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\_form.php(22): CBaseController->widget('ext.kindeditor....', Array)
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\ShopCuoi\protected\views\infopage\update.php(9): CController->renderPartial('_form', Array)
+#10 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('update', Array, true)
+#14 C:\xampp\htdocs\ShopCuoi\protected\controllers\InfopageController.php(87): CController->render('update', Array)
+#15 [internal function]: InfopageController->actionUpdate('home')
+#16 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(InfopageController), Array)
+#17 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(InfopageController), Object(ReflectionMethod), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#26 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('update')
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('infopage/update')
+#28 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#29 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#30 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=infopage/update&col=home
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=product/index
+---
+2014/07/09 00:03:00 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "baseUrl".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:265
+Stack trace:
+#0 [internal function]: CComponent->__call('baseUrl', Array)
+#1 C:\xampp\htdocs\ShopCuoi\protected\controllers\InfopageController.php(100): CWebApplication->baseUrl()
+#2 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): InfopageController->actionUpload()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('upload')
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('infopage/upload')
+#13 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=infopage/upload
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=infopage/upload
+---
+2014/07/09 00:10:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('logout')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('logout')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/logout')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=admin/logout
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=product/index
+---
+2014/07/09 00:11:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "logout".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('logout')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('logout')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/logout')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ShopCuoi/index.php?r=admin/logout
+HTTP_REFERER=http://localhost/ShopCuoi/index.php?r=product/index
+---
+2014/07/09 00:27:58 [error] [php] include(UserCounter.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(103): CWebApplication->getComponent()
+#3 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\catalog.php(10): CWebApplication->__get()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#7 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\main.php(59): SiteController->renderPartial()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#10 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#11 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#12 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#15 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\column2.php(10): SiteController->endContent()
+#16 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#17 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(784): SiteController->renderFile()
+#19 C:\xampp\htdocs\ShopCuoi\protected\controllers\SiteController.php(36): SiteController->render()
+#20 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ShopCuoi\index.php(13): CWebApplication->run()
+REQUEST_URI=/ShopCuoi/
+in C:\xampp\htdocs\ShopCuoi\protected\views\layouts\catalog.php (10)
+in C:\xampp\htdocs\ShopCuoi\protected\views\layouts\main.php (59)
+in C:\xampp\htdocs\ShopCuoi\protected\views\layouts\column2.php (10)
+2014/07/09 00:38:23 [error] [php] include(UserCounter.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (C:\xampp\htdocs\yii\framework\YiiBase.php:421)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\YiiBase.php(196): import()
+#1 C:\xampp\htdocs\yii\framework\base\CModule.php(386): createComponent()
+#2 C:\xampp\htdocs\yii\framework\base\CModule.php(103): CWebApplication->getComponent()
+#3 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\catalog.php(10): CWebApplication->__get()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#7 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\main.php(59): SiteController->renderPartial()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#10 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#11 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#12 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): SiteController->endWidget()
+#15 C:\xampp\htdocs\ShopCuoi\protected\views\layouts\column2.php(10): SiteController->endContent()
+#16 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#17 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(784): SiteController->renderFile()
+#19 C:\xampp\htdocs\ShopCuoi\protected\controllers\SiteController.php(36): SiteController->render()
+#20 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#24 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#25 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#26 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\ShopCuoi\index.php(13): CWebApplication->run()
+REQUEST_URI=/ShopCuoi/
+in C:\xampp\htdocs\ShopCuoi\protected\views\layouts\catalog.php (10)
+in C:\xampp\htdocs\ShopCuoi\protected\views\layouts\main.php (59)
+in C:\xampp\htdocs\ShopCuoi\protected\views\layouts\column2.php (10)
+2014/07/09 00:59:27 [error] [php] Missing argument 3 for CActiveForm::dropDownList(), called in C:\xampp\htdocs\ShopCuoi\protected\views\product\_form.php on line 48 and defined (C:\xampp\htdocs\yii\framework\web\widgets\CActiveForm.php:761)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(869): ProductController->renderFile()
+#2 C:\xampp\htdocs\ShopCuoi\protected\views\product\update.php(18): ProductController->renderPartial()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): ProductController->renderFile()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(782): ProductController->renderPartial()
+#7 C:\xampp\htdocs\ShopCuoi\protected\controllers\ProductController.php(191): ProductController->render()
+#8 unknown(0): ProductController->actionUpdate()
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\ShopCuoi\index.php(13): CWebApplication->run()
+REQUEST_URI=/ShopCuoi/index.php?r=product/update&id=107
+in C:\xampp\htdocs\ShopCuoi\protected\views\product\_form.php (48)
+in C:\xampp\htdocs\ShopCuoi\protected\views\product\update.php (18)
+in C:\xampp\htdocs\ShopCuoi\protected\controllers\ProductController.php (191)
+2014/07/09 01:00:04 [error] [php] Missing argument 2 for CHtml::listData(), called in C:\xampp\htdocs\ShopCuoi\protected\views\product\_form.php on line 48 and defined (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:1836)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(869): ProductController->renderFile()
+#2 C:\xampp\htdocs\ShopCuoi\protected\views\product\update.php(18): ProductController->renderPartial()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): ProductController->renderFile()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(782): ProductController->renderPartial()
+#7 C:\xampp\htdocs\ShopCuoi\protected\controllers\ProductController.php(191): ProductController->render()
+#8 unknown(0): ProductController->actionUpdate()
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\ShopCuoi\index.php(13): CWebApplication->run()
+REQUEST_URI=/ShopCuoi/index.php?r=product/update&id=107
+in C:\xampp\htdocs\ShopCuoi\protected\views\product\_form.php (48)
+in C:\xampp\htdocs\ShopCuoi\protected\views\product\update.php (18)
+in C:\xampp\htdocs\ShopCuoi\protected\controllers\ProductController.php (191)
+2014/07/09 01:03:49 [error] [php] Missing argument 2 for CHtml::listData(), called in C:\xampp\htdocs\ShopCuoi\protected\views\product\_form.php on line 48 and defined (C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php:1836)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(869): ProductController->renderFile()
+#2 C:\xampp\htdocs\ShopCuoi\protected\views\product\update.php(18): ProductController->renderPartial()
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(869): ProductController->renderFile()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(782): ProductController->renderPartial()
+#7 C:\xampp\htdocs\ShopCuoi\protected\controllers\ProductController.php(191): ProductController->render()
+#8 unknown(0): ProductController->actionUpdate()
+#9 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#10 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): ProductController->runAction()
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#15 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): ProductController->filterAccessControl()
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): ProductController->run()
+#20 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#21 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#22 C:\xampp\htdocs\ShopCuoi\index.php(13): CWebApplication->run()
+REQUEST_URI=/ShopCuoi/index.php?r=product/update&id=107
+in C:\xampp\htdocs\ShopCuoi\protected\views\product\_form.php (48)
+in C:\xampp\htdocs\ShopCuoi\protected\views\product\update.php (18)
+in C:\xampp\htdocs\ShopCuoi\protected\controllers\ProductController.php (191)
+2014/07/09 02:06:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/1-1377862490.jpg".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/1-1377862490.jpg
+HTTP_REFERER=http://localhost/ShopCuoi/product/list/status/H%C3%A0ng+Xu%C3%A2n+H%C3%A8/gender/0/type/Qu%E1%BA%A7n.html
+---
+2014/07/09 03:01:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "<controller:\w+>/<action:\w+>/<id:\d+>".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('<controller:\w+...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/admin
+---
+2014/07/09 03:10:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "assets/834f436c/contents.css".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/834f436c...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/assets/834f436c/contents.css
+---
+2014/07/09 03:10:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "howToBuy.html".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('howToBuy.html')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('howToBuy.html')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/howToBuy.h...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ShopCuoi/site/howToBuy.html
+HTTP_REFERER=http://localhost/ShopCuoi/
+---
+2014/07/09 03:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Hệ thống không thể tìm được hành động yêu cầu "howToBuy.html".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('howToBuy.html')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('howToBuy.html')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/howToBuy.h...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/ShopCuoi/site/howToBuy.html
+HTTP_REFERER=http://localhost/ShopCuoi/
+---
+2014/07/10 16:42:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/1-1377862490.jpg".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/1-1377862490.jpg
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8&gender=0
+---
+2014/07/10 16:50:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/1-1377862490.jpg".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/1-1377862490.jpg
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8
+---
+2014/07/10 16:50:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/IMG_28062013_171706.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/IMG_28062013_171706.png
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8
+---
+2014/07/10 17:06:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/IMG_28062013_171706.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/IMG_28062013_171706.png
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8
+---
+2014/07/10 17:06:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/1-1377862490.jpg".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/1-1377862490.jpg
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8
+---
+2014/07/10 17:06:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/IMG_28062013_171706.png".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/IMG_28062013_171706.png
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8
+---
+2014/07/10 17:06:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Không thể giải quyết yêu cầu "images/Products/1-1377862490.jpg".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('images/Products...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\ShopCuoi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/ShopCuoi/images/Products/1-1377862490.jpg
+HTTP_REFERER=http://localhost/ShopCuoi/product/list.sc?status=H%C3%A0ng+Xu%C3%A2n+H%C3%A8
+---

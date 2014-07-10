@@ -2,7 +2,6 @@
 /* @var $this InfopageController */
 /* @var $model Infopage */
 /* @var $form CActiveForm */
-Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/extensions/tinymce/js/tinymce/tinymce.min.js');
 ?>
 
 <div class="form">
@@ -13,21 +12,21 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/extensions/ti
 )); ?>
 
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
+        <p>Lưu ý Upload ảnh từ máy: Qua tab Upload để up ảnh. Sau đó chèn link dưới dạng http://ShopCuoi.com/images/ten_file.duoi_file</p>
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,$col); ?>
-				<?php 
-//                                $this->widget('application.extensions.ckeditor.CKEditor', array( 
-//                     "model" => $model,
-//                    'attribute'=>$col,
-//
-//                    'editorTemplate'=>'full'));
-                                		//echo $form->textField($model,$col);
-?>
-<?php $this->widget('application.extensions.tinymce.ETinyMce', array('name'=>'html')); ?>
-		<?php echo $form->error($model,$col); ?>
+
+           <?php echo $form->labelEx($model, $col); ?>
+
+            <?php
+            $this->widget('application.extensions.ckeditor.CKEditor', array(
+                "model" => $model,
+                'attribute' => $col,
+                'editorTemplate' => 'full'));
+            ?>
+
+            <?php echo $form->error($model, $col); ?>
 	</div>
 
 
@@ -40,15 +39,3 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/extensions/ti
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
-
-<script type="text/javascript">
-tinymce.init({
-    selector: "textarea",
-    plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste moxiemanager"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-});
-</script>

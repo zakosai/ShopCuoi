@@ -123,13 +123,20 @@ class ProductController extends Controller
                     $baseLink = "../ShopCuoi/images/Products";
                    $model->save();
                     $allowedExts = array("gif", "jpeg", "jpg", "png");
+                     $files = scandir("../ShopCuoi/images/");
                     for ($i = 0; $i < (int) $_POST['number']; $i++) {
 
                         $temp = explode(".", $_FILES["file" . $i]["name"]);
                         $extension = end($temp);
                         if (in_array($extension, $allowedExts)) {
                             $file = CUploadedFile::getInstanceByName('file' . $i);
-                            $file->saveAs($baseLink . '/' . $file->name);
+                            
+                            if(file_exists($baseLink."/".$file->name)) {
+                                $r = rand(000000, 99999);
+                                $file->saveAs($baseLink . '/' . $file->name.$r);
+                            }
+                            else
+                                $file->saveAs($baseLink . '/' . $file->name);
                             $img = new Image;
                             $img->productID = $model->id;
                             $img->link = $_FILES["file" . $i]["name"];

@@ -27,16 +27,12 @@ class InfopageController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('create','update', 'index', 'view', 'upload'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -49,7 +45,7 @@ class InfopageController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id)
+	public function actionView($id = 1)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -92,16 +88,35 @@ class InfopageController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
+        public function actionUpload(){
+            if(isset($_POST['submitImage'])){
+                $baseLink = "../ShopCuoi/images";
+                    $allowedExts = array("gif", "jpeg", "jpg", "png");
+                    $mes = "Link file: <br>";
+                    for ($i = 0; $i < (int) $_POST['number']; $i++) {
 
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-	}
+                        $temp = explode(".", $_FILES["file" . $i]["name"]);
+                        $extension = end($temp);
+                        if (in_array($extension, $allowedExts)) {
+                            
+                            $file = CUploadedFile::getInstanceByName('file' . $i);
+                             if(file_exists($baseLink."/".$file->name)) {
+                                $r = rand(000000, 99999);
+                                $file->saveAs($baseLink . '/' . $file->name.$r);
+                            }
+                            else
+                                $file->saveAs($baseLink . '/' . $file->name);
+                            $mes = $mes.Yii::app()->baseUrl."/images/".$file->name."<br>";
+                        }
+                        else{
+                            $mes = $mes."Kiểu file không phù hợp<br>";
+                        }
+                    }
+            }
+            $this->render('upImg', array('mes'=>$mes));
+        }
 
-	/**
+        /**
 	 * Lists all models.
 	 */
 	public function actionIndex()
@@ -115,17 +130,7 @@ class InfopageController extends Controller
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
-	{
-		$model=new Infopage('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Infopage']))
-			$model->attributes=$_GET['Infopage'];
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
-	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.

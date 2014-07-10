@@ -8,5 +8,5 @@
         <?php echo $str;?>
     </div>
     </div>
-<?php $this->renderPartial('/product/List') ?>
+<?php  $this->renderPartial('/product/List') ?>
 

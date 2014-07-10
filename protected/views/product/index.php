@@ -2,9 +2,6 @@
 /* @var $this ProductController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
-	'Products',
-);
 
 $this->menu=array(
 	array('label'=>'Tạo Sản Phẩm Mới', 'url'=>array('create')),

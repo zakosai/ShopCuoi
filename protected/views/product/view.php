@@ -3,10 +3,6 @@
 /* @var $model Product */
 ?>
 <?php
-$this->breadcrumbs=array(
-	'Products'=>array('index'),
-	$model->id,
-);
 
 $this->menu=array(
 	array('label'=>'Danh sách sản phẩm', 'url'=>array('index')),

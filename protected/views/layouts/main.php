@@ -14,7 +14,7 @@
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
          <div class="banner">
-
+             <img src="<?php echo Yii::app()->baseUrl."/images/shopcuoi.png"?>"></img>
             </div>
 </head>
 
@@ -41,9 +41,9 @@
 				array('label'=>'Trang chủ', 'url'=>array('/site/index')),
 				array('label'=>'Album ảnh', 'url'=>array('/site/album')),
 				array('label'=>'Cách thức mua hàng', 'url'=>array('/site/howToBuy')),
-				array('label'=>'Khuyến mại', 'url'=>array('/site/login')),
+				array('label'=>'Khuyến mại', 'url'=>array('/promote/list')),
                                 array('label'=>'Bản đồ', 'url'=>array('/site/map')),
-                                array('label'=>'Tin 24h', 'url'=>array('/site/login')),
+                                array('label'=>'Tin 24h', 'url'=>array('/news/list')),
                                 array('label'=>'Giỏ hàng', 'url'=>array('/site/shoppingCart')),
 
 			),

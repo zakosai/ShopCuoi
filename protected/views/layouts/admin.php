@@ -39,9 +39,12 @@ $str = "Đơn đặt hàng mới"
                             array('label'=>'Album Ảnh', 'url'=>array('/infopage/update', 'col'=>'album')),
 				array('label'=>'Cách Thức Mua Hàng', 'url'=>array('/infopage/update', 'col'=>'shopping')),
 				array('label'=>'Bản đồ', 'url'=>array('/infopage/update', 'col'=>'map')),
+                                array('label'=>'Upload Ảnh', 'url'=> array('infopage/upload')),
+                                array('label'=>'Khuyến Mại', 'url'=> array('promote/index')),
+                                 array('label'=>'Tin 24h', 'url'=> array('news/index')),
 				array('label'=>'Sản phẩm', 'url'=>array('/product/index')),
                                 array('label'=>'Đơn đặt hàng mới('.count($ticket).')', 'url'=>array('/transaction/indexNew')),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/admin/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),
 		));
                 }?>

@@ -11,7 +11,7 @@ return array(
         'theme' =>'',
 	// preloading 'log' component
 	'preload'=>array('log'),
-              //  'language'=>'vi',
+           'language'=>'vi',
 	// autoloading model and component classes
 	'import'=>array(
 		'application.models.*',
@@ -51,22 +51,20 @@ return array(
                     'class'=>'bootstrap.components.Bootstrap',
                 ),
             'counter' => array(
-            'class' => 'UserCounter',
-        ),
+                'class' => 'UserCounter',
+         ),
 		// uncomment the following to enable URLs in path-format
 		
-//		'urlManager'=>array(
-//			'urlFormat'=>'path',
-//			'rules'=>array(
-//				'view'=>'<controller:\w+>/<id:\d+>',
-//                                '<action>'=>'<controller:\w+>/<action:\w+>',
-//				'<action>'=>'<controller:\w+>/<action:\w+>/<id:\d+>',
-//				
-//                                'product/list/<status:\w+>/<gender:\d+>/<type:\w+>' =>'<status>-<type>',
-//			),
-//                    'showScriptName'=>false,
-//                    'urlSuffix'=>'.html',
-//		),
+		'urlManager'=>array(
+			'urlFormat'=>'path',
+			'rules'=>array(
+				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
+				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+			),
+                    'showScriptName'=>false,
+                    'urlSuffix'=>'.sc',
+		),
 	
 
             

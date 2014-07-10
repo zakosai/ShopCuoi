@@ -33,18 +33,25 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
             $model = Infopage::model()->findAllByPk(1);
             $str = $model[0]->home;
+            
 		$this->render('index', array('str'=>$str));
 	}
         public function actionAlbum(){
-            $this->render('album');
+            $model = Infopage::model()->findAllByPk(1);
+            $str = $model[0]->album;
+            $this->render('album', array('str'=>$str));
         }
        
         public function actionHowToBuy(){
-            $this->render('howToBuy');
+            $model = Infopage::model()->findAllByPk(1);
+            $str = $model[0]->shopping;
+            $this->render('howToBuy', array('str'=>$str));
         }
         
          public function actionMap(){
-            $this->render('map');
+             $model = Infopage::model()->findAllByPk(1);
+            $str = $model[0]->map;
+            $this->render('map', array('str'=>$str));
         }
         
         public function actionShoppingCart(){
@@ -148,8 +155,9 @@ class SiteController extends Controller
 	 */
 	public function actionLogout()
 	{
+            $this->layout = '//layouts/column1';
 		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
+		$this->redirect(Yii::app()->baseUrl);
 	}
         
 	

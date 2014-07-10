@@ -3,11 +3,7 @@
 /* @var $model Product */
 /* @var $img Image */
 
-$this->breadcrumbs=array(
-	'Products'=>array('index'),
-	$model->id=>array('view','id'=>$model->id),
-	'Update',
-);
+
 
 $this->menu=array(
 	array('label'=>'Danh Sách Sản Phẩm', 'url'=>array('index')),

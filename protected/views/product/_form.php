@@ -3,6 +3,9 @@
 /* @var $model Product */
 /* @var $form CActiveForm */
 $baseLink = Yii::app()->baseUrl."/images/Products";
+$status = array('Hàng Xuân Hè'=>'Hàng Xuân Hè', 'Hàng Thu Đông'=>'Hàng Thu Đông', 'Hàng Giảm Giá'=>'Hàng Giảm Giá');
+$gender = array('Bé Trai', 'Bé Gái');
+$type = array('Quần'=>'Quần', 'Áo'=>'Áo', 'Váy'=>'Váy', 'Phụ Kiện Đính Kèm'=>'Phụ Kiện Đính Kèm', 'Bộ'=>'Bộ');
 ?>
 
 <div class="form product">
@@ -43,19 +46,22 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'status'); ?>
-		<?php echo $form->textField($model,'status'); ?>
+		 <?php 
+               echo   $form->dropDownList($model,'status', $status);
+
+                  ?>
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'gender'); ?>
-		<?php echo $form->textField($model,'gender'); ?>
+		<?php echo   $form->dropDownList($model,'gender', $gender); ?>
 		<?php echo $form->error($model,'gender'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
-		<?php echo $form->textField($model,'type',array('size'=>11,'maxlength'=>11)); ?>
+		<?php echo   $form->dropDownList($model,'type', $type); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
         <div class="uploadImage">

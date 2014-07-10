@@ -2,14 +2,10 @@
 /* @var $this ProductController */
 /* @var $model Product */
 
-$this->breadcrumbs=array(
-	'Products'=>array('index'),
-	'Manage',
-);
 
 $this->menu=array(
-	array('label'=>'List Product', 'url'=>array('index')),
-	array('label'=>'Create Product', 'url'=>array('create')),
+	array('label'=>'Danh sách sản phẩm', 'url'=>array('index')),
+	array('label'=>'Tạo Sản Phẩm Mới', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
