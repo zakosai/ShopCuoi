@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List News', 'url'=>array('index')),
-	array('label'=>'Manage News', 'url'=>array('admin')),
+	array('label'=>'Danh sách các tin', 'url'=>array('index')),
 );
 ?>
 
-<h1>Create News</h1>
+<h1>Tạo tin mới</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

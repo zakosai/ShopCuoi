@@ -3,7 +3,10 @@
 /* @var $model Transaction */
 /* @var $form CActiveForm */
 $baseLink = Yii::app()->baseUrl."/images/Products";
-
+$str = "";
+foreach ($data as $m){
+    $str = $str.",".$m->id;
+}
 ?>
 
 <div class="cusInfo">
@@ -34,7 +37,7 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
 		<?php echo $form->textField($model,'cusEmail',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'cusEmail'); ?>
 	</div>
-        
+        <input type="hidden" class="productID" value="<?php echo $str?>">
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Đặt Hàng'); ?>
 	</div>
@@ -48,7 +51,8 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($data as $m) { 
+            <?php foreach ($data as $m) {
+                $img = $m->images;
                 if($img[0]->link =="") 
                     $img[0]->link = "defaults.jpg";
                 ?>

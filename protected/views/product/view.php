@@ -8,7 +8,7 @@ $this->menu=array(
 	array('label'=>'Danh sách sản phẩm', 'url'=>array('index')),
 	array('label'=>'Tạo Sản Phẩm Mới', 'url'=>array('create')),
 	array('label'=>'Sửa thông tin sản phẩm', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'Xóa sản phẩm', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Xóa sản phẩm', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Bạn có chắc chắn muốn xóa sản phẩm này?')),
 	array('label'=>'Quản lý sản phẩm', 'url'=>array('admin')),
 );
 ?>

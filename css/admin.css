@@ -28,3 +28,7 @@ root {
     width: 49%;
     float: right;
 }
+
+.span-19{
+    width: 850px!important;
+}

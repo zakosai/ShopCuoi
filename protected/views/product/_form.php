@@ -67,7 +67,7 @@ $type = array('Quần'=>'Quần', 'Áo'=>'Áo', 'Váy'=>'Váy', 'Phụ Kiện Đ
         <div class="uploadImage">
             <h2>Chọn Ảnh Sản Phẩm</h2>
            
-            <?php $this->renderPartial('/product/upload', array('img'=>$img))?>
+            <?php $this->renderPartial('/product/upload', array('img'=>$img, 'productID'=>$model->id))?>
         </div>
         
 	<div class="row buttons">

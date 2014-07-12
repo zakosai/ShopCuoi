@@ -28,13 +28,10 @@ class TransactionController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view', 'create'),
 				'users'=>array('*'),
 			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
+
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete','indexNew'),
 				'users'=>array('admin'),
@@ -66,9 +63,7 @@ class TransactionController extends Controller
                 $criteria->alias = 'p';
                 $criteria->addInCondition('p.id', $idList);
                 $criteria->order = 'date DESC';
-                $criteria->with = array(
-                    'images',
-                );
+
                  $product = new CActiveDataProvider('Product', array('criteria'=>$criteria));
                 }
                 $model->status = 1;
@@ -97,7 +92,7 @@ class TransactionController extends Controller
 	public function actionCreate()
 	{
             $this->layout = '//layouts/column2';
-             $productList = $_COOKIE['productId'];
+             $productList = $_POST['productID'];
             
             if ($productList == "")
                 $model = NULL;
@@ -112,9 +107,7 @@ class TransactionController extends Controller
                 $criteria->alias = 'p';
                 $criteria->addInCondition('p.id', $idList);
                 $criteria->order = 'date DESC';
-                $criteria->with = array(
-                    'images',
-                );
+
                  $data = Product::model()->findAll($criteria);
             }
 		$model=new Transaction;

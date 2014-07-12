@@ -7,12 +7,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Promote', 'url'=>array('create')),
-	array('label'=>'Manage Promote', 'url'=>array('admin')),
+	array('label'=>'Tạo tin khuyến mại', 'url'=>array('create')),
 );
 ?>
 
-<h1>Promotes</h1>
+<h1>Các tin khuyến mại</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

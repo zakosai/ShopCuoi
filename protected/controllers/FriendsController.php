@@ -1,6 +1,6 @@
 <?php
 
-class InfopageController extends Controller
+class FriendsController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -27,12 +27,8 @@ class InfopageController extends Controller
 	public function accessRules()
 	{
 		return array(
-                        array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'index', 'view', 'upload'),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete','index','view','create','update'),
 				'users'=>array('admin'),
 			),
 			array('deny',  // deny all users
@@ -45,7 +41,7 @@ class InfopageController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id = 1)
+	public function actionView($id)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -56,30 +52,46 @@ class InfopageController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
+	public function actionCreate()
+	{
+		$model=new Friends;
 
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Friends']))
+		{
+			$model->attributes=$_POST['Friends'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($col)
+	public function actionUpdate($id)
 	{
-		$model=$this->loadModel(1);
+		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Infopage']))
+		if(isset($_POST['Friends']))
 		{
-			$model->attributes=$_POST['Infopage'];
+			$model->attributes=$_POST['Friends'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-                        'col' =>$col,
 		));
 	}
 
@@ -88,40 +100,21 @@ class InfopageController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-        public function actionUpload(){
-            if(isset($_POST['submitImage'])){
-                $baseLink = "images";
-                    $allowedExts = array("gif", "jpeg", "jpg", "png");
-                    $mes = "Link file: <br>";
-                    for ($i = 0; $i < (int) $_POST['number']; $i++) {
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
 
-                        $temp = explode(".", $_FILES["file" . $i]["name"]);
-                        $extension = end($temp);
-                        if (in_array($extension, $allowedExts)) {
-                            
-                            $file = CUploadedFile::getInstanceByName('file' . $i);
-                             if(file_exists($baseLink."/".$file->name)) {
-                                $r = rand(000000, 99999);
-                                $file->saveAs($baseLink . '/' . $file->name.$r);
-                            }
-                            else
-                                $file->saveAs($baseLink . '/' . $file->name);
-                            $mes = $mes.Yii::app()->baseUrl."/images/".$file->name."<br>";
-                        }
-                        else{
-                            $mes = $mes."Kiểu file không phù hợp<br>";
-                        }
-                    }
-            }
-            $this->render('upImg', array('mes'=>$mes));
-        }
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
 
-        /**
+	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Infopage');
+		$dataProvider=new CActiveDataProvider('Friends');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -130,18 +123,28 @@ class InfopageController extends Controller
 	/**
 	 * Manages all models.
 	 */
+	public function actionAdmin()
+	{
+		$model=new Friends('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Friends']))
+			$model->attributes=$_GET['Friends'];
 
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Infopage the loaded model
+	 * @return Friends the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Infopage::model()->findByPk($id);
+		$model=Friends::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -149,11 +152,11 @@ class InfopageController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Infopage $model the model to be validated
+	 * @param Friends $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='infopage-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='friends-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

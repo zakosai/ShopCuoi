@@ -41,9 +41,9 @@ return array(
 			'allowAutoLogin'=>true,
 		),
             // assets
-                'assetManager' => array(
-                    'linkAssets' => true,
-                 ),
+//                'assetManager' => array(
+//                    'linkAssets' => true,
+//                 ),
 
                 'Cookies' => array('class' => 'application.components.CookiesHelper'),
 
@@ -63,7 +63,7 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
                     'showScriptName'=>false,
-                    'urlSuffix'=>'.sc',
+                    'urlSuffix'=>'.html',
 		),
 	
 

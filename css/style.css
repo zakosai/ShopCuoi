@@ -69,6 +69,11 @@ body{background-color: #f5e6e6!important; margin: auto!important;}
     line-height: 1.5;
 }
 
+.fb-like-box{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 div.span-5.last{
     width: 17%;
     float: left;
@@ -203,4 +208,8 @@ font-size: 18px;
 .info #giohang{
     width: 50%;
     float: right;
+}
+
+.friendlink{
+    margin-top: 50px;
 }

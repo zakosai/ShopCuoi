@@ -40,7 +40,7 @@
 
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Tạo' : 'Lưu'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

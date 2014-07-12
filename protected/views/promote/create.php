@@ -8,11 +8,10 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Promote', 'url'=>array('index')),
-	array('label'=>'Manage Promote', 'url'=>array('admin')),
+	array('label'=>'Danh sách các khuyến mãi', 'url'=>array('index')),
 );
 ?>
 
-<h1>Create Promote</h1>
+<h1>Tạo tin khuyến mãi</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

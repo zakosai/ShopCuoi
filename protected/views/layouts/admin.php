@@ -16,7 +16,9 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	        <?php Yii::app()->bootstrap->register(); ?>
+
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 <?php
 $ticket = Transaction::model()->findAll(array("condition"=>"status = 0"));
@@ -43,6 +45,7 @@ $str = "Đơn đặt hàng mới"
                                 array('label'=>'Khuyến Mại', 'url'=> array('promote/index')),
                                  array('label'=>'Tin 24h', 'url'=> array('news/index')),
 				array('label'=>'Sản phẩm', 'url'=>array('/product/index')),
+                                array('label'=> 'Web liên kết', 'url'=>array('friends/index')),
                                 array('label'=>'Đơn đặt hàng mới('.count($ticket).')', 'url'=>array('/transaction/indexNew')),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
 			),

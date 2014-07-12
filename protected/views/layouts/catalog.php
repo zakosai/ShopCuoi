@@ -7,8 +7,7 @@ $status = array('Hàng Xuân Hè', 'Hàng Thu Đông', 'Phụ Kiện Đính Kèm
 $statusGet = $_GET['status'];
 $genderGet = $_GET['gender'];
 $typeGet = $_GET['type'];
-
-
+$link = Friends::model()->findAll();
 ?>
 <div class="Catalog">
 <ul id="yw0" class="nav nav-list">
@@ -88,19 +87,19 @@ $typeGet = $_GET['type'];
 </ul>
 </div>
 
-<div class="Visited">
+<div class="friendlink">
 <ul id="yw0" class="nav nav-list">
-    <div class="title"> LƯỢT KHÁCH GHÉ THĂM</div>
-    
+    <div class="title"> Link liên kết</div>
     <hr>
+    <ul>
+        <?php 
+        foreach($link as $l){?>
+    <li><a href="<?php echo $l->link?>"> <?php  echo $l->name;?></a> </li>
+    <?php  }
+        ?>
+    </ul>
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-52654803-1', 'auto');
-  ga('send', 'pageview');
+ 
 
 </script>
     <br/>
@@ -109,15 +108,15 @@ $typeGet = $_GET['type'];
 <div class="fb-like-box" data-href="https://www.facebook.com/banquanaotreemgiare" data-width="185" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
 
 <?php
-    $files = scandir("../ShopCuoi/images/");
+    $files = scandir("images/decor/");
     $extension = array("gif", "jpeg", "jpg", "png");
     $i = 0;
     foreach ($files as $f){
         $type = explode(".", $f);
         $type = end($type);
         if (in_array($type, $extension)){
-            echo CHtml::image(Yii::app()->baseUrl."/images/".$f,'Ảnh Trang Trí', array('width' => 185));
-            if ($i++ >= 7) break;
+            echo CHtml::image(Yii::app()->baseUrl."/images/decor/".$f,'Ảnh Trang Trí', array('width' => 185));
+           // if ($i++ >= 7) break;
         }
 
     }

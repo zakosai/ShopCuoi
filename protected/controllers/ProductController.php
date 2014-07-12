@@ -76,9 +76,7 @@ class ProductController extends Controller
             $criteria->select = '*';
             $criteria->condition = $str;
             $criteria->order = 'date DESC';
-            $criteria->with = array(
-                'images',
-            );     
+             
             $model = Product::model()->findAll($criteria);
             //$model = Product::model()->findAll();
              //die($model);
@@ -120,10 +118,11 @@ class ProductController extends Controller
 		if(isset($_POST['Product']))
 		{
                     $model->attributes = $_POST['Product'];
-                    $baseLink = "../ShopCuoi/images/Products";
+                    $baseLink = "images/Products";
                    $model->save();
                     $allowedExts = array("gif", "jpeg", "jpg", "png");
-                     $files = scandir("../ShopCuoi/images/");
+                     $files = scandir("images/");
+                     $k = 0;
                     for ($i = 0; $i < (int) $_POST['number']; $i++) {
 
                         $temp = explode(".", $_FILES["file" . $i]["name"]);
@@ -140,7 +139,8 @@ class ProductController extends Controller
                             $img = new Image;
                             $img->productID = $model->id;
                             $img->link = $_FILES["file" . $i]["name"];
-                            $img->important = 1;
+                            if ($k == 0) $img->important = 0;
+                            else $img->important = 1;
                             $img->save();
                         }
                     }
@@ -170,7 +170,7 @@ class ProductController extends Controller
 		{
 			$model->attributes=$_POST['Product'];
                         
-                        $baseLink = "../ShopCuoi/images/Products";
+                        $baseLink = "images/Products";
                         $model->save();
                         $allowedExts = array("gif", "jpeg", "jpg", "png");
                         for ($i = 0; $i < (int)$_POST['number']; $i++){
@@ -224,10 +224,7 @@ class ProductController extends Controller
 	{
             $criteria = new CDbCriteria;
             $criteria->select = '*';
-            $criteria->order = 'date DESC';
-            $criteria->with = array(
-                'images',
-            );     
+            $criteria->order = 'date DESC';     
 		$dataProvider=new CActiveDataProvider('Product', array('criteria'=>$criteria));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,

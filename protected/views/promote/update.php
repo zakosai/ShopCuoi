@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Promote', 'url'=>array('index')),
-	array('label'=>'Create Promote', 'url'=>array('create')),
-	array('label'=>'View Promote', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Promote', 'url'=>array('admin')),
+	array('label'=>'Danh sách các Khuyến mãi', 'url'=>array('index')),
+	array('label'=>'Tạo tin khuyến mãi', 'url'=>array('create')),
+	array('label'=>'Xem tin vừa tạo', 'url'=>array('view', 'id'=>$model->id)),
 );
 ?>
 
-<h1>Update Promote <?php echo $model->id; ?></h1>
+<h1>Sửa tin khuyến mãi <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

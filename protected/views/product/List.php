@@ -11,9 +11,7 @@ if(empty($model)){
     $criteria = new CDbCriteria;
             $criteria->select = '*';
             $criteria->order = 'date DESC';
-            $criteria->with = array(
-                'images',
-            );     
+    
             $model = Product::model()->findAll($criteria);
 }
 $n0 = count($model);

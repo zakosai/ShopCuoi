@@ -9,13 +9,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List News', 'url'=>array('index')),
-	array('label'=>'Create News', 'url'=>array('create')),
-	array('label'=>'View News', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage News', 'url'=>array('admin')),
+	array('label'=>'Danh sách các tin đã đăng', 'url'=>array('index')),
+	array('label'=>'Tạo tin mới', 'url'=>array('create')),
+	array('label'=>'Xem tin này', 'url'=>array('view', 'id'=>$model->id)),
 );
 ?>
 
-<h1>Update News <?php echo $model->id; ?></h1>
+<h1>Sửa Tin 24h <?php echo $model->id; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

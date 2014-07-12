@@ -1,25 +1,20 @@
 <?php
 
 /**
- * This is the model class for table "product".
+ * This is the model class for table "friends".
  *
- * The followings are the available columns in table 'product':
+ * The followings are the available columns in table 'friends':
  * @property integer $id
- * @property string $productCode
- * @property string $madeOf
- * @property string $size
- * @property integer $price
- * @property integer $status
- * @property integer $gender
- * @property string $type
+ * @property string $name
+ * @property string $link
  * @property string $date
  */
-class Product extends CActiveRecord
+class Friends extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Product the static model class
+	 * @return Friends the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +26,7 @@ class Product extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'product';
+		return 'friends';
 	}
 
 	/**
@@ -42,16 +37,10 @@ class Product extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('productCode, status, gender, type', 'required'),
-			array('price, gender', 'numerical', 'integerOnly'=>true),
-			array('productCode', 'length', 'max'=>255),
-			array('madeOf', 'length', 'max'=>255),
-			array('size', 'length', 'max'=>255),
-			array('type', 'length', 'max'=>255),
-                        array('status', 'length', 'max'=>255),
+			array('name, link', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, productCode, madeOf, size, price, status, gender, type, date', 'safe', 'on'=>'search'),
+			array('id, name, link, date', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,8 +52,6 @@ class Product extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-                    'images' => array(self::HAS_MANY, 'Image', 'productID'),
-                    
 		);
 	}
 
@@ -75,14 +62,9 @@ class Product extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'productCode' => 'Mã Sản Phẩm',
-			'madeOf' => 'Chất',
-			'size' => 'Kích cỡ',
-			'price' => 'Giá Tiền',
-			'status' => 'Hàng',
-			'gender' => 'Giới Tính',
-			'type' => 'Kiểu',
-			'date' => 'Ngày tạo',
+			'name' => 'Name',
+			'link' => 'Link',
+			'date' => 'Date',
 		);
 	}
 
@@ -98,19 +80,12 @@ class Product extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
-		$criteria->compare('productCode',$this->productCode,true);
-		$criteria->compare('madeOf',$this->madeOf,true);
-		$criteria->compare('size',$this->size,true);
-		$criteria->compare('price',$this->price);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('gender',$this->gender);
-		$criteria->compare('type',$this->type,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('link',$this->link,true);
 		$criteria->compare('date',$this->date,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-       
-        
 }
