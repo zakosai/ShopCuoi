@@ -19,6 +19,10 @@
 </head>
 
 <body>
+    <div class="fairy">
+        <a href="<?php echo Yii::app()->createUrl('/site/shoppingCart')?>"><b>Giỏ Hàng (<font id="n0" color="red">0</font>)</b></a>
+        <img src="<?php echo Yii::app()->baseUrl."/images/bg/fairy.png"?>"></img>
+    </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -35,7 +39,7 @@
  
         <div id="mainmenu">
 		<?php $this->widget('bootstrap.widgets.TbMenu',array(
-                        'type'=>'tabs',
+                        'type'=>'pills',
                         'stacked'=>false,
 			'items'=>array(
 				array('label'=>'Trang chủ', 'url'=>array('/site/index')),
@@ -60,10 +64,11 @@
                 </div>
 
 	<?php echo $content; ?>
-                
 	<div class="clear"></div>
        
 	<div id="footer">
+                            <div class="rabbit"><img src="<?php echo Yii::app()->baseUrl."/images/bg/rabiit.png"?>"></img></div>        
+
              <hr></hr>
              <a href="<?php echo Yii::app()->baseUrl ?>">Shop Cuội</a><br>
              Mọi chi tiết xin liên hệ số điện thoại: 

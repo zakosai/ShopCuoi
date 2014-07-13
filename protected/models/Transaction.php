@@ -104,7 +104,6 @@ class Transaction extends CActiveRecord
 	}
         public function beforeSave() {
             if($this->isNewRecord){
-                $this->productStr = $_COOKIE['productId'];
                 $this->status = 0;
             }
                             parent::beforeSave();

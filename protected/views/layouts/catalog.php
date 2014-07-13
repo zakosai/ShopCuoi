@@ -10,15 +10,22 @@ $typeGet = $_GET['type'];
 $link = Friends::model()->findAll();
 ?>
 <div class="Catalog">
-<ul id="yw0" class="nav nav-list">
-        <div class="title"> DANH MỤC</div>
-        <hr>
+    <div class="CatalogDecorTop">
+        <?php   echo CHtml::image(Yii::app()->baseUrl."/images/bg/left001.png",'Ảnh Trang Trí');?>
+    </div>
+    <div class="CatalogDecorMiddle">
+<!--<ul id="yw0" class="nav nav-list">-->
+<!--        <div class="title"> DANH MỤC</div>
+        <hr>-->
         
       <!-- Hang Xuân Hè ------------------------------------------------------------- -->
-        <li class ="type1">
-            <a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Xuân Hè"))?>">HÀNG XUÂN HÈ</a></li>
+        <div class ="type1">
+            <img src="<?php echo Yii::app()->baseUrl."/images/bg/left002.png"?>">
+            <a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Xuân Hè"))?>">HÀNG XUÂN HÈ</a></img></div>
         <ul>
-            <li class ="type2"><a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Xuân Hè","gender"=>"0"))?>">ĐỒ BÉ TRAI</a></li>
+            <div class ="type2">
+                 <img src="<?php echo Yii::app()->baseUrl."/images/bg/star.png"?>" />
+                                     <a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Xuân Hè","gender"=>"0"))?>">ĐỒ BÉ TRAI</a></div>
             <ul>
                 <?php
                         foreach ($boy as $b){
@@ -27,7 +34,9 @@ $link = Friends::model()->findAll();
                 ?>
             </ul>
             <br />
-            <li class ="type2"><a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Xuân Hè","gender"=>"1"))?>">ĐỒ BÉ GÁI</a></li>
+            <div class ="type2">
+                 <img src="<?php echo Yii::app()->baseUrl."/images/bg/heart.png"?>" />
+                <a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Xuân Hè","gender"=>"1"))?>">ĐỒ BÉ GÁI</a></div>
             <ul>
                 <?php
                         foreach ($girl as $g){
@@ -36,11 +45,12 @@ $link = Friends::model()->findAll();
                 ?>
             </ul>
         </ul>
-        <hr class ="catalogHr">
         <!-- Hang Thu Dong------------------------------------------------------------- -->
-         <li class ="type1"><a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Thu Đông"))?>">HÀNG THU ĐÔNG</a></li>
+         <div class ="type1"><img src="<?php echo Yii::app()->baseUrl."/images/bg/left002.png"?>"><a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Thu Đông"))?>">HÀNG THU ĐÔNG</a></img></div>
         <ul>
-            <li class ="type2"><a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Thu Đông","gender"=>"0"))?>">ĐỒ BÉ TRAI</a></li>
+            <div class ="type2">
+                <img src="<?php echo Yii::app()->baseUrl."/images/bg/star.png"?>" />
+                <a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Thu Đông","gender"=>"0"))?>">ĐỒ BÉ TRAI</a></div>
             <ul>
                 <?php
                         foreach ($boy as $b){
@@ -49,7 +59,9 @@ $link = Friends::model()->findAll();
                 ?>
             </ul>
             <br />
-            <li class ="type2"><a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Thu Đông","gender"=>"1"))?>">ĐỒ BÉ GÁI</a></li>
+            <div class ="type2">
+                 <img src="<?php echo Yii::app()->baseUrl."/images/bg/heart.png"?>" />
+                <a href="<?php echo $this->createUrl('product/list', array("status" => "Hàng Thu Đông","gender"=>"1"))?>">ĐỒ BÉ GÁI</a></div>
             <ul>
                 <?php
                         foreach ($girl as $g){
@@ -58,20 +70,25 @@ $link = Friends::model()->findAll();
                 ?>
             </ul>
         </ul>
-        <hr class ="catalogHr">
       <!-- Phu Kien Dinh Kem------------------------------------------------------------- -->
-       <li class ="type1"><a href="<?php echo $this->createUrl('product/list', array("type"=>"Phụ Kiện Đính Kèm"))?>">PHỤ KIỆN ĐÍNH KÈM</a></li>
+       <div class ="type1"><img src="<?php echo Yii::app()->baseUrl."/images/bg/left002.png"?>"><a href="<?php echo $this->createUrl('product/list', array("type"=>"Phụ Kiện Đính Kèm"))?>">PHỤ KIỆN ĐÍNH KÈM</a></img></div>
 <!--        <hr class ="catalogHr">-->
       <!-- Hàng Giảm Giá------------------------------------------------------------- -->
 <!--       <li class ="type1"><a href="#">Hàng Giảm Giá</a></li>-->
-       <br />
+
 </ul>
+        </div>
+    <div class="CatalogDecorBottom">
+        <?php   echo CHtml::image(Yii::app()->baseUrl."/images/bg/left004.png",'Ảnh Trang Trí');?>
+    </div>
 </div>
 <!-- Ho tro online ----------------------------------------------->
 <div class="Support">
-<ul id="yw0" class="nav nav-list">
-    <div class="title"> HỖ TRỢ ONLINE</div>
-    <hr>
+        <div class="CatalogDecorTop">
+        <?php   echo CHtml::image(Yii::app()->baseUrl."/images/bg/left001.png",'Ảnh Trang Trí');?>
+    </div>
+    <div class="type1"><img src="<?php echo Yii::app()->baseUrl."/images/bg/left0021.png"?>"> <div class="txt">HỖ TRỢ ONLINE</div></img></div>
+    <div class="middle">
    <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <div id="SkypeButton_Call_zakosai_1">
   <script type="text/javascript">
@@ -82,15 +99,17 @@ $link = Friends::model()->findAll();
       "imageSize": 32
     });
   </script>
+</div>
 </div>              
-    <br/>
-</ul>
+
 </div>
 
 <div class="friendlink">
-<ul id="yw0" class="nav nav-list">
-    <div class="title"> Link liên kết</div>
-    <hr>
+        <div class="CatalogDecorTop">
+        <?php   echo CHtml::image(Yii::app()->baseUrl."/images/bg/left001.png",'Ảnh Trang Trí');?>
+    </div>
+    <div class="type1"><img src="<?php echo Yii::app()->baseUrl."/images/bg/left0021.png"?>"> <div class="txt">LINK LIÊN KẾT</div></img></div>
+    <div class="middle">
     <ul>
         <?php 
         foreach($link as $l){?>
@@ -98,12 +117,9 @@ $link = Friends::model()->findAll();
     <?php  }
         ?>
     </ul>
-    <script>
- 
-
-</script>
+    </div>
     <br/>
-</ul>
+
 </div>
 <div class="fb-like-box" data-href="https://www.facebook.com/banquanaotreemgiare" data-width="185" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="true" data-show-border="true"></div>
 

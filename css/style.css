@@ -7,32 +7,34 @@
 */
 
 root {  display: block;}
-body{background-color: #f5e6e6!important; margin: auto!important;}
+body{margin: auto!important;background-image: url('../images/bg/land.png'); background-repeat:no-repeat; background-attachment: fix; background-position: bottom}
 
 /*#content{
     background-color: pink;
 }*/
 .banner{width: 100%; height: 306px; }
-#mainmenu{width: 100%; float: left;}
-#mainmenu #yw0{background-color: #0088cc; height: 45px; border-radius: 25px;}
+#mainmenu{width: 100%; float: left; margin-top: 20px}
+#mainmenu #yw0{ height: 45px; border-radius: 25px;}
 #mainmenu #yw0 li{padding-left: 20px;}
 /*.menuBtn{
     background-color: #06c;
     border: 2px;
     border-color: white;
 }*/
-
-
-#mainmenu .active a{color: black!important;}
+/*#footer{background-color: rgba(0,0,0,0.5);}*/
+.rabbit img{position: relative;
+bottom: 25px;
+left: 50px;}
+#mainmenu .active a{color: white!important; background-color: #f5ae25}
 #mainmenu a{
     border: 2px;
     border-color: white;
-    color: white;
-    line-height: 30px;
+    color: black;
+    line-height: 22px;
+    border-radius: 20px;
 }
 .nav-list{
-    border: 1px solid gray;
-        background-color: #c0d3fb;
+   position: relative;
 
 }
 
@@ -45,19 +47,56 @@ body{background-color: #f5e6e6!important; margin: auto!important;}
     color: gray!important;
 }
 
-.nav-list > .type1 > a{
-    color: black!important;
-    font-weight: bold;
+.type1{
+    position: relative;
+}
+.type1 > a{
+   color: white;
+font-weight: bold;
+padding-top: -2px;
+position: absolute;
+top: 6px;
+left: 28px;
+font-size: 16px;
 }
 
+.type1 .txt{
+       color: white;
+font-weight: bold;
+padding-top: -2px;
+position: absolute;
+top: 6px;
+left: 28px;
+font-size: 16px;
+}
+
+.middle{
+border: 2px solid #f08093;
+    border-radius: 20px;
+    border-top: none;
+   
+}
 .nav-list .catalogHr{
     border-top: 0px;
     width: 80%;
     margin-left: 16px;
 }
-.nav-list {
-    width: 160px;
+.Catalog a{
+    color: white;
 }
+.Catalog ul{
+    margin: 0 7px!important;
+    background-color: #f08093;
+}
+.type2{
+    text-align: center;
+}
+
+.type3{
+    margin-left: 71px;
+}
+
+
 
 .Support{
     margin-top: 50px;
@@ -85,7 +124,8 @@ div.span-19{
     width: 82%;
     float: right;
     margin: 0 auto;
-    border: 1px solid gray;
+    border: 2px solid #f08093;
+    border-radius: 25px;
 }
 
 #footer{
@@ -133,7 +173,7 @@ div.span-19{
 
 .container .text{
     background-color: #f0f3a6;
-
+    border-radius: 25px;
 }
 
 .cont{
@@ -144,10 +184,7 @@ div.span-19{
     position: absolute;
     z-index: 100000;
 }
-.page{
-    width: 100%;
-    text-align: right;
-}
+
 
 .giohangMes{
     position: fixed!important;
@@ -212,4 +249,45 @@ font-size: 18px;
 
 .friendlink{
     margin-top: 50px;
+}
+
+.fairy{
+    position: fixed;
+    top: 200px;
+    right: -44px;
+    z-index: -1;
+}
+.fairy a {
+color: white;
+text-decoration: none;
+/* display: block; */
+height: 100px;
+background-color: pink;
+text-align: center;
+top: -51px;
+position: relative;
+background-image: url('../images/left002.png');
+border-radius: 15px;
+}
+.page{
+    width: 60%;
+    text-align: center;
+    float: right;
+    margin: 5px auto;
+}
+.page .n0{
+    border: 1px solid #f08093;
+    border-radius: 5px;
+    width: 3%;
+   float: left;
+}
+
+.page .active{
+    background-color: #f08093;
+        border-radius: 5px;
+        color: white;
+            width: 3%;
+            float: left;
+                border: 1px solid white;
+
 }

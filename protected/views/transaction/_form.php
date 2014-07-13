@@ -37,7 +37,7 @@ foreach ($data as $m){
 		<?php echo $form->textField($model,'cusEmail',array('size'=>60,'maxlength'=>200)); ?>
 		<?php echo $form->error($model,'cusEmail'); ?>
 	</div>
-        <input type="hidden" class="productID" value="<?php echo $str?>">
+        <input type="hidden" name="Transaction[productStr]" id="Transaction_productStr" value="<?php echo $str?>">
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Đặt Hàng'); ?>
 	</div>

@@ -14,9 +14,10 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
 <script>
     $(document).ready(function(){
         $(".delete<?php echo $m->id ?>").click(function(){
-            var cart = getCookie('productId');
-            cart = cart.replace(<?php echo $m->id ?>,'');
-           setCookie('productId',cart);
+         
+        var cart = getCookie('shopcuoi-product');
+            cart = cart.replace(<?php echo ",".$m->id."," ?>,'');
+           setCookie('shopcuoi-product',cart, 1);
            $("#<?php echo $m->id?>").remove();
 
 

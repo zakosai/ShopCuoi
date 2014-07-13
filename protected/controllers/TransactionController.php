@@ -93,7 +93,6 @@ class TransactionController extends Controller
 	{
             $this->layout = '//layouts/column2';
              $productList = $_POST['productID'];
-            
             if ($productList == "")
                 $model = NULL;
             else{

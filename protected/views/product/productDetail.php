@@ -72,17 +72,27 @@ function getCookie(cname) {
 }
  $(document).ready(function(){
     $(".giohang<?php echo $model->id ?>").click(function(){
-                   var cart = getCookie('productId');
+                   var cart = getCookie('sc.productId');
                    if (cart != ""){
-                            var str = cart +"," + <?php echo $model->id?>;
-                            setCookie('productId',str);
-                            
+                            var s = "*" + <?php echo $data->id?> + ")";
+                            if (cart.indexOf(s) == -1){
+                                var str = cart +"," + <?php echo $data->id?> + ",";
+                                setCookie('shopcuoi-product',str);
+
+
+                                 $(".giohangMes").scrollTop(30);
+                                    $(".giohangMes").css({'opacity':1, 'top':'+50px'});
+                                    $(".giohangMes").show();
+                                    $(".giohangMes").animate({
+                                        "top" : "-30px",
+                                        "opacity": 0,
+                                    }, 1500);
+                                }
 
                    }
-                   else 
-                       setCookie('productId', <?php echo $model->id?>);
-                   
-                   $(".giohangMes").scrollTop(30);
+                   else {
+                       setCookie('shopcuoi-product', <?php echo "',".$data->id.",'"?>);
+                        $(".giohangMes").scrollTop(30);
                    $(".giohangMes").css({'opacity':1, 'top':'+50px'});
                    $(".giohangMes").show();
                    $(".giohangMes").animate({
@@ -90,6 +100,8 @@ function getCookie(cname) {
                        "opacity": 0,
                    }, 1500);
                    
+
+                    }
             });
             })
 </script>

@@ -27,14 +27,14 @@ class SiteController extends Controller
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	public function actionIndex()
+	public function actionIndex($page = null)
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
             $model = Infopage::model()->findAllByPk(1);
             $str = $model[0]->home;
             
-		$this->render('index', array('str'=>$str));
+		$this->render('index', array('str'=>$str, 'page'=>$page));
 	}
         public function actionAlbum(){
             $model = Infopage::model()->findAllByPk(1);
@@ -55,8 +55,8 @@ class SiteController extends Controller
         }
         
         public function actionShoppingCart(){
-            $productList = $_COOKIE['productId'];
-            
+            $productList = isset(Yii::app()->request->cookies['shopcuoi-product']) ? Yii::app()->request->cookies['shopcuoi-product']->value : '';
+
             if ($productList == "")
                 $model = NULL;
             else{
@@ -77,7 +77,43 @@ class SiteController extends Controller
             }
             $this->render('/transaction/shoppingCart', array('model'=>$model));
         }
+	public function actionCreate()
+	{
+             $productList = isset(Yii::app()->request->cookies['shopcuoi-product']) ? Yii::app()->request->cookies['shopcuoi-product']->value : '';;
+            if ($productList == "")
+                $model = NULL;
+            else{
+//                $list = explode(",", $productList);
+//                for ($i=0; $i<len($list); $i++)
+//                    $list[$i] = substr($list[$i], 0, strpos($list[$i], ''));
+                $idList = array_map('intval', explode(",", $productList));
+                $idList = array_unique($idList);
+                $criteria = new CDbCriteria;
+                $criteria->select = '*';
+                $criteria->alias = 'p';
+                $criteria->addInCondition('p.id', $idList);
+                $criteria->order = 'date DESC';
 
+                 $data = Product::model()->findAll($criteria);
+            }
+		$model=new Transaction;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Transaction']))
+		{
+			$model->attributes=$_POST['Transaction'];
+			if($model->save()){
+				$this->render('/transaction/cartMes');
+                        }
+		}
+
+		$this->render('/transaction/create',array(
+			'model'=>$model,
+                        'data' => $data,
+		));
+	}
 
         public function actionCookies(){
             $this->render('cookies');
