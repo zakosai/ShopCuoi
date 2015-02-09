@@ -74,7 +74,7 @@ function getCookie(cname) {
     $(".giohang<?php echo $model->id ?>").click(function(){
                    var cart = getCookie('sc.productId');
                    if (cart != ""){
-                            var s = "*" + <?php echo $data->id?> + ")";
+                            var s = "," + <?php echo $data->id?> + ",";
                             if (cart.indexOf(s) == -1){
                                 var str = cart +"," + <?php echo $data->id?> + ",";
                                 setCookie('shopcuoi-product',str);

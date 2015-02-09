@@ -45,10 +45,16 @@ class InfopageController extends Controller
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id = 1)
+	public function actionView($col)
 	{
+            $model = $this->loadModel(1);
+            if($col == 'home') $str = $model->home;
+            else if($col == 'album') $str = $model->album;
+            else if($col == 'shopping') $str = $model->shopping;
+            else $str = $model->map;
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'str'=>$str,
+                    'col'=>$col,
 		));
 	}
 
@@ -74,7 +80,7 @@ class InfopageController extends Controller
 		{
 			$model->attributes=$_POST['Infopage'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('view','col'=>$col));
 		}
 
 		$this->render('update',array(
@@ -97,16 +103,19 @@ class InfopageController extends Controller
 
                         $temp = explode(".", $_FILES["file" . $i]["name"]);
                         $extension = end($temp);
+                        list($name) = explode(".", $_FILES["file" . $i]["name"]);
                         if (in_array($extension, $allowedExts)) {
                             
                             $file = CUploadedFile::getInstanceByName('file' . $i);
                              if(file_exists($baseLink."/".$file->name)) {
                                 $r = rand(000000, 99999);
-                                $file->saveAs($baseLink . '/' . $file->name.$r);
+                                $file->saveAs($baseLink . '/' . $ $name."_".$r.".".$extension);
+                                $mes = $mes.Yii::app()->baseUrl."/images/". $name."_".$r.".".$extension."<br>";
                             }
-                            else
+                            else{
                                 $file->saveAs($baseLink . '/' . $file->name);
                             $mes = $mes.Yii::app()->baseUrl."/images/".$file->name."<br>";
+                            }
                         }
                         else{
                             $mes = $mes."Kiểu file không phù hợp<br>";

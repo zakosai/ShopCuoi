@@ -64,11 +64,10 @@ $type = array('Quần'=>'Quần', 'Áo'=>'Áo', 'Váy'=>'Váy', 'Phụ Kiện Đ
 		<?php echo   $form->dropDownList($model,'type', $type); ?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
-        <div class="uploadImage">
-            <h2>Chọn Ảnh Sản Phẩm</h2>
-           
-            <?php $this->renderPartial('/product/upload', array('img'=>$img, 'productID'=>$model->id))?>
-        </div>
+<div class="upload">
+    <input type="file" name="file0" value="file" id="file">
+</div>
+<input type="hidden" name="number" id="number" value="1">
         
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Tạo Sản Phẩm' : 'Lưu'); ?>

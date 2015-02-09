@@ -40,6 +40,9 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+            'request'=>array(
+                'enableCookieValidation'=>true,
+            ),
             // assets
 //                'assetManager' => array(
 //                    'linkAssets' => true,

@@ -127,18 +127,24 @@ class ProductController extends Controller
 
                         $temp = explode(".", $_FILES["file" . $i]["name"]);
                         $extension = end($temp);
-                        if (in_array($extension, $allowedExts)) {
+                        $ex = strtolower($extension);
+                        if (in_array($ex, $allowedExts)) {
                             $file = CUploadedFile::getInstanceByName('file' . $i);
                             
                             if(file_exists($baseLink."/".$file->name)) {
+                               list($name) = explode(".", $_FILES["file" . $i]["name"]);
+
                                 $r = rand(000000, 99999);
-                                $file->saveAs($baseLink . '/' . $file->name.$r);
+                               $file->saveAs($baseLink . '/' . $name."_".$r.".".$extension);
+                               $name = $name."_".$r.".".$extension;
                             }
-                            else
+                            else{
                                 $file->saveAs($baseLink . '/' . $file->name);
+                                $name = $file->name;
+                            }
                             $img = new Image;
                             $img->productID = $model->id;
-                            $img->link = $_FILES["file" . $i]["name"];
+                            $img->link = $name;
                             if ($k == 0) $img->important = 0;
                             else $img->important = 1;
                             $img->save();
@@ -177,7 +183,8 @@ class ProductController extends Controller
                             
                             $temp = explode(".", $_FILES["file".$i]["name"]);
                             $extension = end($temp);
-                            if(in_array($extension, $allowedExts)){
+                             $ex = strtolower($extension);
+                            if(in_array($ex, $allowedExts)){
                                 $file = CUploadedFile::getInstanceByName('file'.$i);
                                 $file->saveAs($baseLink.'/'.$file->name);
                                 $img = new Image;

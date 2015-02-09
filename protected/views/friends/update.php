@@ -18,4 +18,4 @@ $this->menu=array(
 
 <h1>Sửa Web liên kết <?php echo $model->name; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('/admin/friends/_form', array('model'=>$model)); ?>

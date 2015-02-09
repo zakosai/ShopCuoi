@@ -43,7 +43,7 @@ class FriendsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		$this->render('view',array(
+		$this->render('/admin/friends/view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -66,7 +66,7 @@ class FriendsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('create',array(
+		$this->render('/admin/friends/create',array(
 			'model'=>$model,
 		));
 	}
@@ -90,7 +90,7 @@ class FriendsController extends Controller
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('update',array(
+		$this->render('/admin/friends/update',array(
 			'model'=>$model,
 		));
 	}
@@ -115,7 +115,7 @@ class FriendsController extends Controller
 	public function actionIndex()
 	{
 		$dataProvider=new CActiveDataProvider('Friends');
-		$this->render('index',array(
+		$this->render('/admin/friends/index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
@@ -130,7 +130,7 @@ class FriendsController extends Controller
 		if(isset($_GET['Friends']))
 			$model->attributes=$_GET['Friends'];
 
-		$this->render('admin',array(
+		$this->render('/admin/friends/admin',array(
 			'model'=>$model,
 		));
 	}

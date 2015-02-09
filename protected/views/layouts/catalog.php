@@ -89,6 +89,7 @@ $link = Friends::model()->findAll();
     </div>
     <div class="type1"><img src="<?php echo Yii::app()->baseUrl."/images/bg/left0021.png"?>"> <div class="txt">HỖ TRỢ ONLINE</div></img></div>
     <div class="middle">
+        <div align ="center"> <a href="ymsgr:sendim?ShopCuoi"><img src="http://opi.yahoo.com/online?u=nguyenthu220886&m=g&t=1" alt="Send yahoo message title="Yahoo chat support" border=0></a></div>
    <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <div id="SkypeButton_Call_zakosai_1">
   <script type="text/javascript">

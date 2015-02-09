@@ -6,8 +6,8 @@
  */
 
 ?>
-<p> Cám ơn bạn đã đặt hàng. Shop sẽ duyệt đơn hàng và gọi lại cho bạn sớm nhất có thể</p>
-<a class="btn btn-primary" href="<?php echo $this->createUrl('site/index')?>">Tiếp tục mua sắm</a>
+<p align="center"> Cám ơn bạn đã đặt hàng. Shop sẽ duyệt đơn hàng và gọi lại cho bạn sớm nhất có thể</p>
+<div align="center"><a class="btn btn-primary" href="<?php echo $this->createUrl('site/index')?>">Tiếp tục mua sắm</a></div>
 <script>
     
 function setCookie(cname,cvalue,exdays) {

@@ -11,7 +11,7 @@ function p($i){
 }
 $i = 1;
 $str = "";
-if ($model == NULL) echo "Không có sản phẩm nào trong giỏ hàng";
+if ($model == NULL) echo "<div align='center'>Không có sản phẩm nào trong giỏ hàng</div>";
 else {
 ?>
 <div id="yw29" class="grid-view">

@@ -55,8 +55,7 @@ class SiteController extends Controller
         }
         
         public function actionShoppingCart(){
-            $productList = isset(Yii::app()->request->cookies['shopcuoi-product']) ? Yii::app()->request->cookies['shopcuoi-product']->value : '';
-
+            $productList = $_COOKIE['shopcuoi-product'];
             if ($productList == "")
                 $model = NULL;
             else{
@@ -79,7 +78,7 @@ class SiteController extends Controller
         }
 	public function actionCreate()
 	{
-             $productList = isset(Yii::app()->request->cookies['shopcuoi-product']) ? Yii::app()->request->cookies['shopcuoi-product']->value : '';;
+             $productList = $_COOKIE['shopcuoi-product'];
             if ($productList == "")
                 $model = NULL;
             else{
@@ -105,6 +104,7 @@ class SiteController extends Controller
 		{
 			$model->attributes=$_POST['Transaction'];
 			if($model->save()){
+                            setcookie('shopcuoi-product', '', time()+86400);
 				$this->render('/transaction/cartMes');
                         }
 		}

@@ -1,6 +1,10 @@
 <?php
 /* @var $this InfopageController */
 /* @var $model Infopage */
+if ($col == 'home') $mes = "Trang Chủ";
+else if($col == 'album') $mes = "Album Ảnh Cửa Hàng";
+else if($col == 'shopping') $mes = "Cách Thức Mua Hàng";
+else $mes = "Bản Đồ";
 
 $this->breadcrumbs=array(
 	'Infopages'=>array('index'),
@@ -16,15 +20,8 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Infopage #<?php echo $model->id; ?></h1>
+<h1><?php echo $mes; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
-	'data'=>$model,
-	'attributes'=>array(
-		'id',
-		'home',
-		'album',
-		'shopping',
-		'map',
-	),
-)); ?>
+<?php echo $str;?>
+
+

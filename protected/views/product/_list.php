@@ -70,11 +70,12 @@ $baseLink = Yii::app()->baseUrl."/images/Products";
 		});
                 $(".giohang<?php echo $data->id ?>").click(function(){
                    var cart = getCookie('shopcuoi-product');
+                   alert(cart);
                    if (cart != ""){
-                            var s = "*" + <?php echo $data->id?> + ")";
+                            var s = "," + <?php echo $data->id?> + ",";
                             if (cart.indexOf(s) == -1){
                                 var str = cart +"," + <?php echo $data->id?> + ",";
-                                setCookie('shopcuoi-product',str);
+                                setCookie('shopcuoi-product',str,1);
 
 
                                  $(".giohangMes").scrollTop(30);

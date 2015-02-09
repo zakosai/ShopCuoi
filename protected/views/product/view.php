@@ -1,8 +1,10 @@
 <?php
 /* @var $this ProductController */
 /* @var $model Product */
-?>
-<?php
+function gender($n0){
+    if ($n0 == 0)        return "Bé Trai";
+    else return "Bé Gái";
+}
 
 $this->menu=array(
 	array('label'=>'Danh sách sản phẩm', 'url'=>array('index')),
@@ -12,7 +14,7 @@ $this->menu=array(
 	array('label'=>'Quản lý sản phẩm', 'url'=>array('admin')),
 );
 ?>
-<h1>View Product #<?php echo $model->id; ?></h1>
+<h1>Thông tin chi tiết sản phẩm <?php echo $model->productCode; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
@@ -23,7 +25,10 @@ $this->menu=array(
 		'size',
 		'price',
 		'status',
-		'gender',
+		array(
+                    'label'=> 'Giới Tính',
+                    'value'=> gender($model->gender),
+                ),
 		'type',
 		'date',
 	),
